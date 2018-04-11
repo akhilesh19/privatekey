@@ -1,7 +1,11 @@
 import {Component, OnInit,NgModule, ElementRef} from '@angular/core';
 import { CommonService } from './Services/CommonService';
 import { Http, Headers, RequestOptions, Response  } from '@angular/http';
-import 'rxjs/add/operator/map';
+import { CountdownModule } from 'ngx-countdown';
+import {Observable} from 'rxjs/Observable'
+import 'rxjs/add/observable/timer'
+import 'rxjs/add/operator/map'
+import 'rxjs/add/operator/take'
 import * as $ from 'jquery'
 @Component({
   selector: 'app',
@@ -16,7 +20,8 @@ export class AppComponent {
    public lastName:string;
    public access:boolean=false;
    public products:any;
-
+    countDown;
+    counter = 1521008097888;
 	    constructor(
         private http: Http,
         private common_service : CommonService
@@ -27,6 +32,8 @@ export class AppComponent {
         	if(data)
         	this.access = true;	
         	this.getProduct();
+
+    
         }
     login() {
    	var body = {
@@ -93,8 +100,11 @@ getProduct()
     	console.log(Response.json());
     	if(Response.json().responseCode==200)
     	{
-    		alert(Response.json().responseMessage)
-    		this.products = Response.json().data
+    		// alert(Response.json().responseMessage)
+        console.log(Response.json().data.docs)
+    		this.products = Response.json().data.docs
+        // if(this.products)
+           // this.updateDate();
     	}
     	else
     	{
@@ -102,6 +112,13 @@ getProduct()
     	}
     });
 }
+ // updateDate()
+ //        {
+ //          for(var i=0;i<this.products.length;i++)
+ //           console.log(this.products[i].actionStartedDate = Observable.timer(0,1000)
+ //          .take(this.products[i].actionStartedDate)
+ //          .map(() =>{ --this.products[i].actionStartedDate;  /*this.updateDate(); console.log("this.products[i].actionStartedDate: ",this.products[i].actionStartedDate)*/}))
+ //       }
   ngOnInit() {
   }
 

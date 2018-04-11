@@ -1,0 +1,102 @@
+<!DOCTYPE htm../l>
+<html lang="en">
+<head>
+	<title>home</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--===============================================================================================-->	
+	<link rel="icon" type="image/png" href="../images/icons/favicon.ico"/>
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="../vendor/bootstrap/css/bootstrap.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="../fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="../vendor/animate/animate.css">
+<!--===============================================================================================-->	
+	<link rel="stylesheet" type="text/css" href="../vendor/css-hamburgers/hamburgers.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="../vendor/select2/select2.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="../css/util.css">
+	<link rel="stylesheet" type="text/css" href="../css/main.css">
+<!--===============================================================================================-->
+</head>
+<body>
+	
+	<div class="limiter">
+		<div class="container-login100">
+			<div class="wrap-login101">
+				<style>
+					table {
+					    font-family: arial, sans-serif;
+					    border-collapse: collapse;
+					    width: 100%;
+					}
+
+					td, th {
+					    border: 1px solid #dddddd;
+					    text-align: left;
+					    padding: 8px;
+					}
+
+					tr:nth-child(even) {
+					    background-color: #dddddd;
+					}
+					</style>
+					<span class="login100-form-title">
+						Details of users
+					</span>
+
+					<table>
+					  <tr>
+					    <th>User id</th>
+					    <th>Address</th>
+					    <th>Private key</th>
+					  </tr>
+					  <tr *ngFor='let res of response; trackBy: index;'>
+					    <td>{{res.userId}}</td>
+					    <td>{{res.info.address}}</td>
+					    <td>{{res.privateKey}}</td>
+					  </tr>
+					 <!--  <tr>
+					    <td>Centro comercial Moctezuma</td>
+					    <td>Francisco Chang</td>
+					    <td>Mexico</td>
+					  </tr>
+					  <tr>
+					    <td>Ernst Handel</td>
+					    <td>Roland Mendel</td>
+					    <td>Austria</td>
+					  </tr>
+					  <tr>
+					    <td>Island Trading</td>
+					    <td>Helen Bennett</td>
+					    <td>UK</td>
+					  </tr>
+					  <tr>
+					    <td>Laughing Bacchus Winecellars</td>
+					    <td>Yoshi Tannamuri</td>
+					    <td>Canada</td>
+					  </tr>
+					  <tr>
+					    <td>Magazzini Alimentari Riuniti</td>
+					    <td>Giovanni Rovelli</td>
+					    <td>Italy</td>
+					  </tr> -->
+					</table>
+								
+			</div>
+		</div>
+	</div>
+	
+	
+
+	
+	<script >
+		$('.js-tilt').tilt({
+			scale: 1.1
+		})
+	</script>
+
+</body>
+</html>
